@@ -8,6 +8,7 @@ class Intro(Scene):
             start_point,
             plate_center,
             end_loc=None,
+            next_to=None,
             scale=0.45,
     ):
         objects= VGroup()
@@ -53,9 +54,17 @@ class Intro(Scene):
             self.play(
                 objects.animate
                     .scale(scale)
-                    .move_to(end_loc),
+                    .shift(end_loc),
                 run_time=1,
                 rate_func=rate_functions.linear
+            )
+        if next_to is not None:
+            self.play(
+                objects.animate
+                    .scale(scale)
+                    .next_to(next_to, DOWN),
+                run_time=1,
+                rate_func = rate_functions.linear
             )
 
         return objects
@@ -168,7 +177,7 @@ class Intro(Scene):
             sequence2,
             start_point=release_point,
             plate_center=strike_zone.get_center(),
-            end_loc=(UL),
+            end_loc=(LEFT*4+UP*3),
             p_sequence="FF, FF, FF"
         )
 
@@ -176,7 +185,7 @@ class Intro(Scene):
             sequence3,
             start_point=release_point,
             plate_center=strike_zone.get_center(),
-            end_loc=(UL+DOWN*1),
+            next_to=seq2,
             p_sequence="SL, CH, FS"
         )
 
@@ -184,6 +193,6 @@ class Intro(Scene):
             sequence4,
             start_point=release_point,
             plate_center=strike_zone.get_center(),
-            end_loc=(UL+DOWN*1.5),
+            next_to=seq3,
             p_sequence="SL, SL, FS"
         )
