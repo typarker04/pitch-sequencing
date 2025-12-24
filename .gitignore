@@ -1,3 +1,17 @@
+<<<<<<< HEAD
 media/
 __pycache__/
 *.log
+=======
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+# Large data files
+*.RData
+.pkg
+raw_statcast2024.RData
+quarto-1.8.25-macos.pkg
+*.RData
+*.pkg
+>>>>>>> 017f1a07ca17c42ae5d1c6f6c4845898446693b5

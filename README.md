@@ -1,0 +1,1 @@
+I analyzed MLB All-Star pitching data to find which three-pitch combinations are most effective at preventing runs. By comparing each pitcher’s best sequence to a personalized baseline, the project shows how pitch sequencing can meaningfully influence game outcomes.
